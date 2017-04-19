@@ -89,7 +89,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ### Symfony Templates
 
-#### formhandle
+#### sf:form:handle
 
 Adds controller form-handling code
 
@@ -106,13 +106,13 @@ if ($form->isSubmitted() && $form->isValid()) {
 }
 ```
 
-#### formrow
+#### sf:form:row
 
 ```php
 {{ form_row(form.$FIELD$) }}
 ```
 
-#### formrowfull
+#### sf:form:rowfull
 
 Renders widget/label/errors
 
@@ -124,7 +124,7 @@ Renders widget/label/errors
 </div>
 ```
 
-#### repofind
+#### sf:repo:find
 
 Queries from a doctrine repository in a controller
 
@@ -133,7 +133,7 @@ $this->getDoctrine()
     ->getRepository('$REPO$')->$METHOD$($ARG$);
 ```
 
-#### rendertwig
+#### sf:render:twig
 
 Renders a Twig template from a controller
 
@@ -144,7 +144,7 @@ return $this->render('$TEMPLATE$', [
 
 ```
 
-#### 404unless
+#### sf:404:unless
 
 404 if statement for your controller
 
@@ -154,37 +154,37 @@ if ($CONDITION$) {
 }
 ```
 
-#### include
+#### sf:include
 
 ```php
 {{ include('$TEMPLATE$') }}
 ```
 
-#### method
+#### sf:anot:method
 
 ```php
 @Method("$METHOD$")
 ```
 
-#### path
+#### sf:twig:path
 
 ```php
 {{ path('$ROUTE$', { $END$ }) }}
 ```
 
-#### render
+#### sf:twig:render
 
 ```php
 {{ render(controller('$CONTROLLER$', { $END$ })) }}
 ```
 
-#### route
+#### sf:anot:route
 
 ```php
 @Route("/$PATH$", name="$NAME$")
 ```
 
-#### action
+#### sf:anot:action
 
 Creates a controller action.
 
@@ -198,7 +198,7 @@ public function $NAME$Action()
 }
 ```
 
-#### service
+#### sf:yml:service
 
 Creates a YML service
 
@@ -209,7 +209,7 @@ $NAME$:
         - '$ARG1$'
 ```
 
-#### tags
+#### sf:yml:tags
 
 Yaml service tags
 
@@ -218,7 +218,7 @@ tags:
     - { name: $TAGNAME$ }
 ```
 
-#### createquery
+#### sf:em:createquery
 
 Query objects in repositories with DQL
 
@@ -231,19 +231,19 @@ $this->getEntityManager()
     ->execute();
 ```
 
-#### getem
+#### sf:em:get
 
 ```php
 $em = $this->getDoctrine()->getManager();
 ```
 
-#### getrepo
+#### sf:em:getrepo
 
 ```php
 $em->getRepository('$ENTITY$');
 ```
 
-#### doctrinecolumn
+#### sf:em:doctrinecolumn
 
 Adds a property with @ORM annotations
 
@@ -254,13 +254,13 @@ Adds a property with @ORM annotations
 private $$$PROPERTYNAME$;
 ```
 
-#### asset
+#### sf:twig:asset
 
 ```php
 {{ asset('$PATH$') }}
 ```
 
-#### asseticjs
+#### sf:twig:asseticjs
 
 ```php
 {% javascripts
@@ -270,7 +270,7 @@ private $$$PROPERTYNAME$;
 {% endjavascripts %}
 ```
 
-#### asseticcss
+#### sf:twig:asseticcss
 
 ```php
 {% stylesheets
@@ -281,7 +281,7 @@ private $$$PROPERTYNAME$;
 {% endstylesheets %}
 ```
 
-#### xmlservices
+#### sf:xml:service
 
 Generates an XML services file
 
@@ -298,7 +298,7 @@ Generates an XML services file
 </container>
 ```
 
-#### yamlroute
+#### sf:yml:route
 
 YAML route
 
@@ -327,7 +327,7 @@ Allows fast entering of translated messages
 {{ '$MESSAGE$'|trans }}
 ```
 
-#### servix
+#### services
 
 Creates a XML service
 
